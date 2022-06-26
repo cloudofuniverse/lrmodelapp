@@ -25,7 +25,7 @@ def index():
         valid = None
         params = None
         try:
-            model_lr = LRModel([int(i) for i in x_val[0].split(",")],[int(j) for j in y_val[0].split(",")])
+            model_lr = LRModel([float(i) for i in x_val[0].split(",")],[float(j) for j in y_val[0].split(",")])
             model_lr.add_const()
             model_lr.fit_data()
             params = model_lr.fit_data()
