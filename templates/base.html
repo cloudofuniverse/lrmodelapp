@@ -1,0 +1,43 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block navbar %}
+<nav class="navbar bg-primary">
+    <div class="container">
+        <a class="navbar-brand text-info" style ="color:white;" href="/">
+            Simple Linear Regression!
+        </a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li><a class="bg-primary" href="/poly"> Polynomial Linear Regression</a></li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block title %}Linear Regression App!{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Simple Linear Regression App</h1>
+        <p>Separate the values by a coma</p>
+    </div>
+    <div class="container">
+        <form method="POST">
+            {{template_form.hidden_tag()}}
+            <p>{{template_form.xdata.label}}
+                {{template_form.xdata()}}
+            </p>
+            <p>
+                {{template_form.ydata.label}}
+                {{template_form.ydata()}}
+            </p>
+            <p>
+                {{template_form.submit()}}
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
